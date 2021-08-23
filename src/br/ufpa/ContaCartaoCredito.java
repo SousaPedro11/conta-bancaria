@@ -19,9 +19,14 @@ public class ContaCartaoCredito extends Conta {
             }
             double pagamentoMinimo = getSaldo() * 0.1;
             if (valor < pagamentoMinimo) {
-                throw new Exception("Pagamento deve ser maior ou igual a " + pagamentoMinimo + "!");
+                throw new Exception("Pagamento deve ser maior ou igual a R$" + pagamentoMinimo + "!");
+            } else if (valor > this.getSaldo()){
+                throw new Exception("Pagamento deve ser menor ou igual a R$" + this.getSaldo() + "!");
             }
             this.saldo -= valor;
+
+            System.out.println("Pagamento de : R$" + valor + " efetuado!\n" + "Saldo: R$" + this.getSaldo());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -37,6 +42,8 @@ public class ContaCartaoCredito extends Conta {
             double valorJuros = this.getSaldo() * juros;
 
             this.saldo += valorJuros;
+            System.out.println("Juros de : R$" + valorJuros + " aplicado!\n" + "Saldo: " + this.getSaldo());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,5 +53,6 @@ public class ContaCartaoCredito extends Conta {
         double valorJuros = this.getSaldo() * JUROSMENSAL;
 
         this.saldo += valorJuros;
+        System.out.println("Juros de : R$" + valorJuros + " aplicado!\n" + "Saldo: " + this.getSaldo());
     }
 }

@@ -61,5 +61,6 @@ public class ContaCorrente extends ContaBancaria {
     public void aplicarRendimentos() {
         double valorTaxasServicos = this.getTaxaServico() + this.getTaxaJuros();
         this.saldo -= valorTaxasServicos;
+        System.out.println("Taxas no valor de R$" + valorTaxasServicos + " aplicadas com sucesso!\nSaldo: " + this.getSaldo());
     }
 }

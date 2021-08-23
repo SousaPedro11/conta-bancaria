@@ -15,7 +15,7 @@ public abstract class ContaBancaria extends Conta {
 
             this.saldo += valor;
             System.out.println(
-                    "Deposito de R$ " + valor + "efetuado com sucesso!\n" +
+                    "Deposito de R$" + valor + " efetuado com sucesso!\n" +
                             "Saldo atual: R$" + this.getSaldo()
             );
         } catch (Exception e) {
@@ -32,7 +32,7 @@ public abstract class ContaBancaria extends Conta {
             if (valor <= this.getSaldo()) {
                 this.saldo -= valor;
                 System.out.println(
-                        "Saque de R$ " + valor + "efetuado com sucesso!\n" +
+                        "Saque de R$" + valor + " efetuado com sucesso!\n" +
                                 "Saldo atual: R$" + this.getSaldo()
                 );
             } else {

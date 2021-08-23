@@ -37,5 +37,6 @@ public class ContaPoupanca extends ContaBancaria {
     public void aplicarRendimentos() {
         double valorRendimento = this.getSaldo() * this.getTaxaRendimento();
         this.saldo += valorRendimento;
+        System.out.println("Rendimento de R$" + valorRendimento + " aplicado!\nSaldo: " + this.getSaldo());
     }
 }
